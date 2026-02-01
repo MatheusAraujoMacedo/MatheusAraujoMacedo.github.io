@@ -729,34 +729,34 @@
 }
 .about-content { 
     display: grid; 
-    grid-template-columns: 1fr 1.5fr; /* A coluna da foto (1fr) é menor que a do texto */
+    grid-template-columns: 1fr 1.5fr; 
     gap: 50px; 
     align-items: center; 
 }
 
-/* Container da Foto - Define o tamanho e posição */
+
 .about-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* O Quadrado Estilizado */
+
 .image-box {
     position: relative;
     width: 100%;
-    max-width: 400px; /* Tamanho máximo do quadrado */
-    aspect-ratio: 1 / 1; /* Força o formato perfeitamente quadrado */
-    border-radius: 20px; /* Bordas arredondadas */
+    max-width: 400px;
+    aspect-ratio: 1 / 1; 
+    border-radius: 20px; 
     overflow: hidden;
-    border: 2px solid var(--card-bg); /* Borda base */
+    border: 2px solid var(--card-bg); 
     box-shadow: 
-        0 0 0 2px var(--accent), /* Borda Neon externa */
-        0 0 30px rgba(0, 127, 255, 0.3); /* Brilho Neon */
+        0 0 0 2px var(--accent), 
+        0 0 30px rgba(0, 127, 255, 0.3); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito ao passar o mouse na foto */
+
 .image-box:hover {
     transform: translateY(-5px);
     box-shadow: 
@@ -764,15 +764,14 @@
         0 0 50px rgba(0, 127, 255, 0.5);
 }
 
-/* A imagem em si */
+
 .image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a foto preencha o quadrado sem distorcer */
+    object-fit: cover; 
     display: block;
 }
 
-/* Overlay opcional para dar um tom mais "tech" na foto (levemente azulada) */
 .image-overlay {
     position: absolute;
     top: 0;
@@ -783,7 +782,7 @@
     pointer-events: none;
 }
 
-/* Ajustes no texto para alinhar com o novo layout */
+
 .about-details {
     display: flex;
     flex-direction: column;
@@ -791,28 +790,28 @@
 }
 
 .about-stats {
-    display: grid; /* Mudando para grid para alinhar melhor os box de stats */
+    display: grid; 
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
 .stat-box {
-    margin-top: 0; /* Removendo margem antiga */
+    margin-top: 0; 
 }
 
-/* --- Responsividade (Celular) --- */
+
 @media (max-width: 900px) {
     .about-content {
-        grid-template-columns: 1fr; /* Vira uma coluna só */
+        grid-template-columns: 1fr; 
         gap: 30px;
     }
 
     .image-box {
-        max-width: 300px; /* Foto um pouco menor no celular */
+        max-width: 300px; 
         margin: 0 auto;
     }
     
     .about-stats {
-        grid-template-columns: 1fr; /* Stats um embaixo do outro no mobile */
+        grid-template-columns: 1fr; 
     }
 }
