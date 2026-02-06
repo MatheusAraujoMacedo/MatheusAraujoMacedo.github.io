@@ -24,6 +24,29 @@
         
         .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--hero-bg); }
         .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            margin: 6px 0 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 127, 255, 0.4);
+            background: rgba(0, 127, 255, 0.08);
+            color: var(--accent);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+
+        .availability-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00cc6a;
+            box-shadow: 0 0 10px rgba(0, 204, 106, 0.7);
+        }
         
         #hacker-name {
         color: var(--accent); 
@@ -781,6 +804,18 @@
     color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.5;
+}
+
+.skill-level {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 127, 255, 0.35);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-family: 'Fira Code', monospace;
+    background: rgba(0, 127, 255, 0.08);
 }
 
 .flip-card:hover .flip-card-front,
