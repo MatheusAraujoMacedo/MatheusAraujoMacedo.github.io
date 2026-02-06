@@ -43,7 +43,6 @@
                 <li><a href="#journey" data-en="Journey">Jornada</a></li>
                 <li><a href="#projects" data-en="Projects">Projetos</a></li>
                 <li><a href="#certs" data-en="Certifications">Certificações</a></li>
-                <li><a href="javascript:void(0)" onclick="triggerHack()" style="color: #ff4d4d;"><i class="fas fa-biohazard"></i> <span data-en="Caution">Cuidado</span></a></li>
                 <li><a href="javascript:void(0)" onclick="toggleLanguage()" id="lang-btn"><i class="fas fa-globe"></i> EN</a></li>
                 <li><a href="javascript:void(0)" onclick="toggleContrast()" id="contrast-btn" data-en="<i class='fas fa-adjust'></i> Contrast"><i class="fas fa-adjust"></i> Contraste</a></li>
                 <li><a href="#contact" class="nav-btn" data-en="Contact">Contato</a></li>
@@ -61,7 +60,6 @@
                 <a href="#certs" onclick="toggleMenu()" data-en="Certifications">Certificações</a>
                 <a href="javascript:void(0)" onclick="toggleLanguage(); toggleMenu();" id="lang-btn-mobile">Inglês (EN)</a>
                 <a href="javascript:void(0)" onclick="toggleContrast(); toggleMenu();" id="contrast-btn-mobile" data-en="Contrast">Contraste</a>
-                <a href="javascript:void(0)" onclick="triggerHack(); toggleMenu();" style="color: #ff4d4d;" data-en="Caution">Cuidado</a>
                 <a href="#contact" onclick="toggleMenu()" data-en="Contact">Contato</a>
         </div>
     </header>
@@ -671,7 +669,6 @@
                 modal.classList.remove('show');
             }
         }
-let hackInterval;
 let currentLang = 'pt';
 const mobileMenuButton = document.getElementById('mobile-menu');
 const mobileNavList = document.getElementById('mobile-nav-list');
@@ -683,32 +680,6 @@ function toggleMenu() {
 
 if (mobileMenuButton) {
     mobileMenuButton.addEventListener('click', toggleMenu);
-}
-
-
-function triggerHack() {
-    const screen = document.getElementById('hack-screen');
-    const percentEl = document.getElementById('hack-percent');
-    screen.style.display = 'flex';
-    
-    let count = 0;
-    if(hackInterval) clearInterval(hackInterval);
-
-    hackInterval = setInterval(() => {
-        count += Math.floor(Math.random() * 2) + 1;
-        if (count >= 100) {
-            count = 100;
-            clearInterval(hackInterval);
-            percentEl.innerText = '100% - COMPLETED';
-        } else {
-            percentEl.innerText = count + '%';
-        }
-    }, 150);
-}
-
-function stopHack() {
-    clearInterval(hackInterval);
-    document.getElementById('hack-screen').style.display = 'none';
 }
 
 
@@ -739,21 +710,6 @@ function toggleContrast() {
     document.body.classList.toggle('white-contrast');
 }
     </script>
-<div id="hack-screen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; z-index:10000; color:#0f0; font-family:'Fira Code', monospace; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 20px;">
-    <h1 style="color:red; font-size:clamp(1.5rem, 5vw, 3rem); text-shadow: 0 0 10px red;" class="blink">SISTEMA COMPROMETIDO</h1>
-    <div style="text-align:left; background:#111; border:1px solid #ff4d4d; padding:20px; margin:20px; max-width:500px; width:90%; font-size: 0.9rem; line-height: 1.6;">
-        <p>> Ignorando firewall...</p>
-        <p>> Acessando arquivos confidenciais...</p>
-        <p>> Localização rastreada: <span style="color: white;">São Paulo, BR</span></p>
-        <p style="color:red; font-weight: bold;">> STATUS: DOWNLOAD DE DADOS EM <span id="hack-percent">0%</span></p>
-    </div>
-    <button onclick="stopHack()" class="btn" style="border-color:red; color:red; cursor:pointer; background:transparent;">REINICIAR SISTEMA</button>
-</div>
-
-<style>
-    .blink { animation: blinker 1s linear infinite; }
-    @keyframes blinker { 50% { opacity: 0; } }
-</style>
 
 <div vw class="enabled">
     <div vw-access-button class="active"></div>
